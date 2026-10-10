@@ -1,0 +1,28 @@
+import java.util.*;
+ 
+public class Main {
+    public static void answer(int r, int x, int y) {
+        int realX = 0, realY = 0;
+        for (int i = x - r; i <= x + r; i++) {
+            int a = i - x;
+            int temp = r * r - a * a;      
+            int s = (int) Math.round(Math.sqrt(temp));
+            if (s * s == temp) {             
+                realX = i;
+                realY = y + s;
+                break;
+            }
+        }
+        System.out.println(realX + " " + realY);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            int r = sc.nextInt();
+            answer(r, x, y);
+        }
+    }
+}

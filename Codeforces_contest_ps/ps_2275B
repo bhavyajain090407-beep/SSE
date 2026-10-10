@@ -1,0 +1,56 @@
+import java.util.*;
+ 
+public class Main {
+    public static void answer(int n, String s) {
+        int[] ans = new int[n];   
+        int a = 0;
+        int[] nums = new int[n]; 
+        int b = 0;               
+        for (int i = 1; i <= n; i++) {
+            char ch = s.charAt(i - 1);
+            if (ch == '3') {
+                ans[a] = i;
+                a++;
+            }
+            if (ch == '1') {
+                nums[b] = i;
+                b++;
+            }
+            if (ch == '2') {
+                if (b == 0) {
+                    ans[a] = i;
+                    a++;
+                } else {
+                    ans[a] = nums[b - 1];
+                    a++;
+                    b--;
+                }
+            }
+        }
+        boolean[] inAns = new boolean[n + 1];
+        for (int i = 0; i < a; i++) {
+            inAns[ans[i]] = true;
+        }
+        int[] ans_1 = new int[n];
+        int k = 0;
+        for (int i = 1; i <= n; i++) {
+            if (!inAns[i]) {
+                ans_1[k] = i;
+                k++;
+            }
+        }
+        System.out.println(k);
+        for (int i = 0; i < k; i++) {
+            System.out.print(ans_1[i] + " ");
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            String s = sc.next();
+            answer(n, s);
+        }
+    }
+}
