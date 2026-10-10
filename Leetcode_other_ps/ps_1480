@@ -1,0 +1,11 @@
+class Solution {
+    public int[] runningSum(int[] nums) {
+        int c = 0;
+        int runningsum[] = new int[nums.length];
+        for(int i = 0 ; i<nums.length ; i++){
+            c = c + nums[i];
+            runningsum[i]=c;
+        }
+        return runningsum;
+    }
+}
