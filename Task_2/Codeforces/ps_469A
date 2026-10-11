@@ -1,0 +1,32 @@
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int p = sc.nextInt();
+        int[] nums = new int[n];
+        for(int i=0 ; i<p ; i++){
+            int a = sc.nextInt();
+            nums[a-1]++;
+        }
+        int q = sc.nextInt();
+        for(int i=0 ; i<q ; i++){
+            int b = sc.nextInt();
+            nums[b-1]++;
+        }
+        int c =0;
+        for(int i=0 ; i<n ; i++){
+            if(nums[i]==0){
+                System.out.println("Oh, my keyboard!");
+                break;
+            }
+            else{
+                c++;
+            }
+        }
+        if(c==n){
+            System.out.println("I become the guy.");
+        }
+    }
+}

@@ -1,0 +1,57 @@
+import java.util.*;
+ 
+public class Main {
+    public static String answer(int n , int m) {
+        String a = "YES";
+        String b = "NO";
+        if(n==2 && m==3){
+            return a;
+        }
+        if(n==3 && m==5){
+            return a;
+        }
+        if(n==5 && m==7){
+            return a;
+        }
+        if(n==7 && m==11){
+            return a;
+        }
+        if(n==11 && m==13){
+            return a;
+        }
+        if(n==13 && m==17){
+            return a;
+        }
+        if(n==17 && m==19){
+            return a;
+        }
+        if(n==19 && m==23){
+            return a;
+        }
+        if(n==23 && m==29){
+            return a;
+        }
+        if(n==29 && m==31){
+            return a;
+        }
+        if(n==31 && m==37){
+            return a;
+        }
+        if(n==37 && m==41){
+            return a;
+        }
+        if(n==41 && m==43){
+            return a;
+        }
+        if(n==43 && m==47){
+            return a;
+        }
+        return b;
+    }
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        System.out.println(answer(n, m));
+    }
+}
